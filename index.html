@@ -1,1 +1,56 @@
-Test
+<style>
+   #inphographic {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+   }
+
+   #background {
+      position: absolute;
+      visibility: hidden;
+      background-color: black;
+      background-repeat: no-repeat;
+      opacity: 0.85;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+   }
+
+   #box {
+      background-color: white;
+      visibility: hidden;
+      border-radius: 25px;
+      position: absolute;
+      border: 8px solid #82a642;
+
+      font-family: sans-serif;
+      color: #405912;
+      font-size: 24px;
+      max-width: 40%;
+      padding: 50px;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: 200;
+   }
+</style>
+
+<div id="background"></div>
+<div id="box">
+   Texto de Prueba, Texto de Prueba, Texto de Prueba, Texto de Prueba, 
+   Texto de Prueba, Texto de Prueba, Texto de Prueba, Texto de Prueba, 
+</div>
+
+<script>
+   let popup = () => { background.style.visibility = 'visible'; box.style.visibility = 'visible'; }
+   let background = document.getElementById('background');
+   background.addEventListener('click', function() { background.style.visibility = 'hidden'; box.style.visibility = 'hidden'; }, false);
+</script>
+
+<object id="inphographic" type="image/svg+xml" data="inphographic.svg"></object>
